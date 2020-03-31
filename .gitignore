@@ -15,3 +15,9 @@ pubspec.lock
 # Directory created by dartdoc
 # If you don't generate documentation locally you can remove this line.
 doc/api/
+android/.classpath
+android/.project
+android/.gradle/
+android/.settings/
+example/android/.project
+example/android/.settings/
