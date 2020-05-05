@@ -318,7 +318,7 @@ public class FlutterIncallManagerPlugin implements MethodCallHandler {
             setMicrophoneMute(origIsMicrophoneMute);
             audioManager.setMode(origAudioMode);
             if (getActivity() != null) {
-                getActivity().setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
+                getActivity().setVolumeControlStream(AudioManager.STREAM_SYSTEM);
             }
             isOrigAudioSetupStored = false;
         }
@@ -644,6 +644,7 @@ public class FlutterIncallManagerPlugin implements MethodCallHandler {
                 bluetoothManager.stop();
                 restoreOriginalAudioSetup();
                 releaseAudioFocus();
+                audioManager.setMode(AudioManager.MODE_NORMAL);
                 audioManagerActivated = false;
             }
             wakeLockUtils.releasePartialWakeLock();
